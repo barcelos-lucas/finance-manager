@@ -1,11 +1,15 @@
-﻿using System;
+using System;
+using FinanceManager.Domain.Interfaces;
+using FinanceManager.Domain.Entities;
+using FinanceManager.Application.UseCases.ContaPagar.GetByUser;
 
-namespace FinanceManager.Domain.Entities
+
+
+namespace FinanceManager.Application.UseCases.ContaPagar.GetByUser
 {
-    public class ContaPagar
+    public class ContaPagarDto
     {
         public Guid Id { get; set; }
-        public Guid UserId { get; set; }
         public string Descricao { get; set; } = default!;
         public decimal Valor { get; set; }
         public DateTime DataVencimento { get; set; }
