@@ -1,0 +1,66 @@
+# ==============================
+# .gitignore para FinanceManager
+# ==============================
+
+# --- DotNet / Visual Studio ---
+# Build outputs
+**/[Bb]in/
+**/[Oo]bj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider / ReSharper
+.idea/
+*.DotSettings.user
+
+# Ignorar caches do Visual Studio
+**/.vs/
+**/*.slnx.sqlite
+
+# SQLite database file (local)
+*.db
+/data/
+
+# Logs
+*.log
+logs/
+
+# ==============================
+# Node / React
+# ==============================
+
+# Dependencies
+**/node_modules/
+
+# Build output
+**/build/
+**/dist/
+
+# Env files (contêm segredos)
+.env
+.env.*.local
+
+# npm debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==============================
+# Docker
+# ==============================
+
+# Docker Compose override (se usar)
+docker-compose.override.yml
+
+# ==============================
+# Mac / Linux / Windows system files
+# ==============================
+.DS_Store
+Thumbs.db
