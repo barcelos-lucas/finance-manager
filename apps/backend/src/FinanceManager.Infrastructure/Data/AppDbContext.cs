@@ -12,12 +12,15 @@ namespace FinanceManager.Infrastructure.Data
 
         public DbSet<ContaPagar> ContasPagar { get; set; } = null!;
         public DbSet<ContaReceber> ContasReceber { get; set; } = default!;
+        public DbSet<CompraCartao> ComprasCartao { get; set; } = default!;
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            //entidade ContaPagar
             modelBuilder.Entity<ContaPagar>(entity =>
             {
                 entity.ToTable("contas_pagar");
@@ -36,7 +39,7 @@ namespace FinanceManager.Infrastructure.Data
                 entity.Property(e => e.CreatedAt)
                       .HasDefaultValueSql("CURRENT_TIMESTAMP");
             });
-
+            //entidade ContaReceber
             modelBuilder.Entity<ContaReceber>(e =>
             {
                 e.ToTable("contas_receber");
@@ -66,8 +69,46 @@ namespace FinanceManager.Infrastructure.Data
 
                 e.Property(c => c.CreatedAt)
                  .IsRequired()
-                 .HasDefaultValueSql("CURRENT_TIMESTAMP"); ;
+                 .HasDefaultValueSql("CURRENT_TIMESTAMP"); 
             });
+
+            //entidade CompraCartao
+            modelBuilder.Entity<CompraCartao>(e =>
+            {
+                e.ToTable("compras_cartao");
+                e.HasKey(c => c.Id);
+
+                e.Property(c => c.UserId)
+                 .IsRequired();
+
+                e.Property(c => c.Descricao)
+                 .HasMaxLength(200)
+                 .IsRequired();
+
+                e.Property(c => c.Valor)
+                 .HasColumnType("decimal(18,2)")
+                 .IsRequired();
+
+                e.Property(c => c.DataCompra)
+                 .IsRequired();
+
+                e.Property(c => c.Categoria)
+                 .HasMaxLength(100)
+                 .IsRequired();
+
+                e.Property(c => c.Cartao)
+                 .HasMaxLength(100)
+                 .IsRequired();
+
+                e.Property(c => c.Parcelas)
+                 .IsRequired();
+
+                e.Property(c => c.CreatedAt)
+                 .IsRequired()
+                 .HasDefaultValueSql("CURRENT_TIMESTAMP"); 
+                
+            });
+
         }
     }
 }
