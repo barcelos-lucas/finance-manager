@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 -- contas pagar
-CREATE TABLE IF NOT EXISTS contas_a_pagar (
+CREATE TABLE IF NOT EXISTS contas_pagar (
     id TEXT PRIMARY KEY,
     user_id TEXT NOT NULL,
     descricao TEXT NOT NULL,
