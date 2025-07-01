@@ -1,4 +1,4 @@
-# FinanceManager Monorepo
+# Finance Manager 
 
 Este repositório reúne:
 
@@ -154,7 +154,7 @@ docker-compose up --build
 1. Clone o repositório:
    ```bash
    git clone <url-do-repo>
-   cd prova-csharp-jr
+   cd finance-manager
    ```
 
 2. **Rodar local**  
